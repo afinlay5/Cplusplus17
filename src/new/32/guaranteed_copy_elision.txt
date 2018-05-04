@@ -1,0 +1,46 @@
+/*
+Copyright (C) 2018 Adrian D. Finlay. All rights reserved.
+
+Licensed under the MIT License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://opensource.org/licenses/MIT
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER INCLUDING AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================
+**/
+
+/* #31 Guaranteed Copy Elision */
+Excerpt adapted from #29 http://bit.ly/Cplusplyus17Ft
+
+C++17 now guarantees copy elision, standardizing a practice by
+certain compilers. That is, it “omits copy constructors, resulting in zero-
+copy pass-by-value semantics.”[1] Consequently, if an expression
+within a call to the dynamic allocator returns a value compatible with
+the type invoked by the dynamic allocator (new X (new X())) then only
+one call rather than several, are made to the constructor of the type in
+question. The net e ect is that less copies of objects are made, which
+could otherwise result in expensive operations. This tightens (in the
+standard) the behavior of objects when they are copied by value.This is
+similar to the behavior under the hood in languages like Java. This,
+among other things, have changed and you should read more about
+this, here.
+
+[1] — CppReference.com: copy elision (http://en.cppreference.com/w/cpp/language/copy_elision)

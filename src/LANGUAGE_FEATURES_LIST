@@ -1,0 +1,48 @@
+/* Excerpt from http://bit.ly/Cplusplus17Ft */
+
+New Language Features
+
+1.Addition of __has_include macro
+2.UTF 8 Character Literals
+3.Hexadecimal Floating Point Literals
+4.New rules for deduction of single member list using auto
+5.Update to __cplusplus value
+6.inline variables
+7.New Syntax for Nested Namespace definitions
+8.Initializers added to if/switch statements
+9.constexpr if
+10.New standard attributes [[fallthrough]], [[maybe_unused]] &[[nodiscard]] ^
+11.Attributes for Enumerator & Namespaces
+12.Error message for static_assert now optional
+13.Structured binding declarations
+14.Keyword typename now allowed in lieu of class in a template’s template paramater
+15.Constant evaluation for non-type template arguments
+16.Class template argument deduction
+17.Extensions on over-aligned Memory Allocation
+18.Fold expressions
+19.List-style Initialization of Enumerations
+20.Specifying non-type template parameters with auto
+21.constexpr lambda expressions
+22.Lambda this by value (*this)
+23.Extending Aggregate Initialization to Base Types
+24.Unknown Attributes Required to be Ignored
+25.Pack Expansions legal in using declarations
+26.Generalization of Range-based for loop
+27.The byte data type ^^
+28.Using attribute namespaces without repetition
+29.Stricter Order of Evaluation Rules
+30.Exception Specifications are part of type definitions
+31.Template-Template Parameters match compatible arguments
+32.Guaranteed Copy Elision
+33.Changes to Specification on Inheriting Constructors
+
+^These are three features grouped into one, which consequently when expanded would make the new feature list count 35.
+^^This is implemented in std::byte (<cstddef>) and is not a part of the actual language such as the other primitive data types. It is considered a basic type inasmuch that std::string is considered a basic type.
+
+C++17 also introduced a revision to Elementary string conversions which you can read about here.
+
+Deprecated Language Features
+1. Removal of Trigraphs by default
+2. Removal of deprecated Increment Operator (++) for bool type
+3. Removal of deprecated register keyword
+4. Removal of deprecated Dynamic Exception Specifications 
