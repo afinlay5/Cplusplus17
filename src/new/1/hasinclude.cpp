@@ -41,7 +41,7 @@ SOFTWARE.
 		#include <any>
 		#define ANSWER "\nWE HAVE THE HEADER / SAFE TO USE HEADER.\n\n"
 	#else
-		#define ANSWER "\nWE DO NOTHAVE THE HEADER / NOT SAFE TO USE HEADER.\n\n"
+		#define ANSWER "\nWE DO NOT HAVE THE HEADER / NOT SAFE TO USE HEADER.\n\n"
 	#endif
 #else //Compiler does not have __has_include
 	#define ANSWER "\nThe\"__has_include\" macro is not included in your compiler\n\n"

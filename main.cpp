@@ -82,11 +82,22 @@ void runNix (string);
 	    CloseHandle( pi.hThread );
 	}
 #else
-	void runWin32Process (LPCTSTR APP) { }
+	void runWin32Process (LPCTSTR APP) {
+	}
 #endif
 
 //main ()
 int main (int argc, char* argv[], char* envp[]) {
+
+	//ENV
+	const char* OS_TYPE = std::getenv("OSTYPE");
+	const char* MACH_TYPE = std::getenv("MACHTYPE");
+	/*
+	int indx =0;
+	while(shell_env[indx] != NULL) {
+		cout << shell_env[indx] << "\n";
+		indx++;
+	}*/
 
 	string type, selection_entry;
 	int selection;
@@ -111,7 +122,8 @@ int main (int argc, char* argv[], char* envp[]) {
 	
 	/* Prompt #2 */
 	cout << "Please enter the number representing the language feature: ";
-	cin >> selection_entry;
+	// cin >> selection_entry;
+	selection_entry = 1;
 		
 	//exit?
 	if (selection_entry.compare("exit") ==0) { return 0;}
@@ -123,7 +135,6 @@ int main (int argc, char* argv[], char* envp[]) {
 		cout << "\nThe entry you have provided is invalid.\n" << endl;
 		cout << "Please enter the number representing the language feature: ";
 		cin >> selection_entry;
-		cout << "]" << endl;
 		transform(selection_entry.begin(), selection_entry.end(), selection_entry.begin(), ::tolower);
 		if (selection_entry.compare("exit") ==0) return 0;
 		else if (selection_entry.length() == 2) goto DOUBLE;
@@ -149,7 +160,6 @@ int main (int argc, char* argv[], char* envp[]) {
 			cout << "The entry you have provided is invalid.\n" << endl;;
 			cout << "\nPlease enter the number representing the language feature: ";
 			cin >> selection_entry;
-			cout << "]" << endl;
 			selection = stoi(selection_entry);
 		}
 	}
@@ -201,7 +211,6 @@ void handleSelection (char type, int selection) {
 				cout << "Compile against -std=c++14 to build." << endl;
 				break;
 		}
-		return;
 	}
 	//New Language Features
 	else {
@@ -210,268 +219,267 @@ void handleSelection (char type, int selection) {
 				cout << "/* #1 Addition of __has_include macro */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/1/hasinclude.cpp." << endl;
 				if (isWindows)
-					runWin32Process("hasinclude");
+					runWin32Process("build/new/1/hasinclude");
 				else
-					runNix("hasinclude");
+					runNix("build/new/1/hasinclude");
 				break;
 			case 2:
 				cout << "/* #2 UTF 8 Character Literals */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/2/utf8.cpp." << endl;
 				if (isWindows)
-					runWin32Process("utf8");
+					runWin32Process("build/new/2/utf8");
 				else
-					runNix("utf8");
+					runNix("build/new/2/utf8");
 				break;
 			case 3:
 				cout << "/* #3 Hexadecimal Floating Point Literals */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/3/hex.cpp." << endl;
 				if (isWindows)
-					runWin32Process("hex");
+					runWin32Process("build/new/3/hex");
 				else
-					runNix("hex");
+					runNix("build/new/3/hex");
 				break;
 			case 4:
 				cout << "/* #4 New rules for deduction of single member list using auto */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/4/auto_deduc.cpp." << endl;
 				if (isWindows)
-					runWin32Process("auto_deduc");
+					runWin32Process("build/new/4/auto_deduc");
 				else
-					runNix("auto_deduc");
+					runNix("build/new/4/auto_deduc");
 				break;
 			case 5:
 				cout << "/* #5 Update to __cplusplus value */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/5/cppvc.cpp." << endl;
 				if (isWindows)
-					runWin32Process("cppvc");
+					runWin32Process("build/new/5/cppvc");
 				else
-					runNix("cppvc");
+					runNix("build/new/5/cppvc");
 				break;
 			case 6:
 				cout << "/* #6 Inline variables */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/6/inline.cpp." << endl;
 				if (isWindows)
-					runWin32Process("inline");
+					runWin32Process("build/new/6/inline");
 				else
-					runNix("inline");
+					runNix("build/new/6/inline");
 				break;
 			case 7:
 				cout << "/* #7 New Syntax for Nested Namespace definitions */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/7/namespace.cpp." << endl;
 				if (isWindows)
-					runWin32Process("namespace");
+					runWin32Process("build/new/7/namespace");
 				else
-					runNix("namespace");
+					runNix("build/new/7/namespace");
 				break;
 			case 8:
 				cout << "/* #8  Initializers added to if/switch statements */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/8/init_if_sw.cpp." << endl;
 				if (isWindows)
-					runWin32Process("init_if_sw");
+					runWin32Process("build/new/8/init_if_sw");
 				else
-					runNix("init_if_sw");
+					runNix("build/new/8/init_if_sw");
 				break;
 			case 9:
 				cout << "/* #9 constexpr if */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/9/constexpr_if.cpp." << endl;
 				if (isWindows)
-					runWin32Process("constexpr_if");
+					runWin32Process("build/new/9/constexpr_if");
 				else
-					runNix("constexpr_if");
+					runNix("build/new/9/constexpr_if");
 				break;
 			case 10:
 				cout << "/* #10 New standard attributes [[fallthrough]], [[maybe_unused]] & [[nodiscard]] */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/10/attributes.cpp." << endl;
 				if (isWindows)
-					runWin32Process("attributes");
+					runWin32Process("build/new/10/attributes");
 				else
-					runNix("attributes");
+					runNix("build/new/10/attributes");
 				break;
 			case 11:
 				cout << "/* #11 Attributes for Enumerator & Namespaces */"<< endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/11/attributes2.cpp." << endl;
 				if (isWindows)
-					runWin32Process("attributes2");
+					runWin32Process("build/new/11/attributes2");
 				else
-					runNix("attributes2");
+					runNix("build/new/11/attributes2");
 				break;
 			case 12:
 				cout << "/* #12 Error message for static_assert now optional */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/12/static_assert.cpp." << endl;
 				if (isWindows)
-					runWin32Process("static_assert");
+					runWin32Process("build/new/12/static_assert");
 				else
-					runNix("static_assert");
+					runNix("build/new/12/static_assert");
 				break;
 			case 13:
 				cout << "/* #13 Structured binding declarations */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/13/tuple_pack.cpp." << endl;
 				if (isWindows)
-					runWin32Process("tuple_pack");
+					runWin32Process("build/new/13/tuple_pack");
 				else
-					runNix("tuple_pack");
+					runNix("build/new/134/tuple_pack");
 				break;
 			case 14:
 				cout << "/* #14 Keyword typename now allowed in lieu of class in a template’s template paramater */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/14/templ_param.cpp." << endl;
 				if (isWindows)
-					runWin32Process("templ_param");
+					runWin32Process("build/new/14/templ_param");
 				else
-					runNix("templ_param");
+					runNix("build/new/14/templ_param");
 				break;
 			case 15:
 				cout << "/* #15 Constant evaluation for non-type template arguments */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/15/const_nontype.cpp." << endl;
 				if (isWindows)
-					runWin32Process("const_nontype");
+					runWin32Process("build/new/15/const_nontype");
 				else
-					runNix("const_nontype");
+					runNix("build/new/15/const_nontype");
 				break;
 			case 16:
 				cout << "/* #16 Class template argument deduction */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/16/temp_arg_deduc.cpp." << endl;
 				if (isWindows)
-					runWin32Process("temp_arg_deduc");
+					runWin32Process("build/new/16/temp_arg_deduc");
 				else
-					runNix("temp_arg_deduc");
+					runNix("build/new/16/temp_arg_deduc");
 				break;
 			case 17:
 				cout << "/* #17 Extensions on over-aligned Memory Allocation */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/17/over_align.cpp." << endl;
 				if (isWindows)
-					runWin32Process("over_align");
+					runWin32Process("build/new/17/over_align");
 				else
-					runNix("over_align");
+					runNix("build/new/17/over_align");
 				break;
 			case 18:
 				cout << "/* #18 Fold Expressions */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/18/fold_expr.cpp." << endl;
 				if (isWindows)
-					runWin32Process("fold_expr");
+					runWin32Process("build/new/18/fold_expr");
 				else
-					runNix("fold_expr");
+					runNix("build/new/18/fold_expr");
 				break;
 			case 19:
 				cout << "/* #19 List-style Initialization of Enumerations */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/19/enum_list.cpp." << endl;
 				if (isWindows)
-					runWin32Process("enum_list");
+					runWin32Process("build/new/19/enum_list");
 				else
-					runNix("enum_list");
+					runNix("build/new/19/enum_list");
 				break;
 			case 20:
 				cout << "/* #20 Specifying non-type template parameters with auto */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/20/auto_temp.cpp." << endl;
 				if (isWindows)
-					runWin32Process("auto_temp");
+					runWin32Process("build/new/20/auto_temp");
 				else
-					runNix("auto_temp");
+					runNix("build/new/20/auto_temp");
 				break;
 			case 21:
 				cout << "/* #21  constexpr lambda expressions */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/21/constexpr_lambda.cpp." << endl;
 				if (isWindows)
-					runWin32Process("constexpr_lambda");
+					runWin32Process("build/new/21/constexpr_lambda");
 				else
-					runNix("constexpr_lambda");
+					runNix("build/new/21/constexpr_lambda");
 				break;
 			case 22:
 				cout << "/* #22 Lambda this by value (*this) */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/22/lambda_this.cpp." << endl;
 				if (isWindows)
-					runWin32Process("lambda_this");
+					runWin32Process("build/new/22/lambda_this");
 				else
-					runNix("lambda_this");
+					runNix("build/new/22/lambda_this");
 				break;
 			case 23:
 				cout << "/* #23 Extending Aggregate Initialization to Base Types */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/23/aggregate.cpp." << endl;
 				if (isWindows)
-					runWin32Process("aggregate");
+					runWin32Process("build/new/23/aggregate");
 				else
-					runNix("aggregate");
+					runNix("build/new/23/aggregate");
 				break;
 			case 24:
 				cout << "/* #24 Unknown Attributes Required to be Ignored */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/24/unknw_attr.cpp." << endl;
 				if (isWindows)
-					runWin32Process("unknw_attr");
+					runWin32Process("build/new/24/unknw_attr");
 				else
-					runNix("unknw_attr");
+					runNix("build/new/24/unknw_attr");
 				break;
 			case 25:
 				cout << "/* #25 Pack Expansions legal in using declarations */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/25/using_pack.cpp." << endl;
 				if (isWindows)
-					runWin32Process("using_pack");
+					runWin32Process("build/new/25/using_pack");
 				else
-					runNix("using_pack");
+					runNix("build/new/25/using_pack");
 				break;
 			case 26:
 				cout << "/* #26 Generalization of Range-based for loop */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/26/range_for.cpp." << endl;
 				if (isWindows)
-					runWin32Process("range_for");
+					runWin32Process("build/new/26/range_for");
 				else
-					runNix("range_for");
+					runNix("build/new/26/range_for");
 				break;
 			case 27:
 				cout << "/* #27 The byte data type */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/27/byte.cpp." << endl;
 				if (isWindows)
-					runWin32Process("byte");
+					runWin32Process("build/new/27/byte");
 				else
-					runNix("byte");
+					runNix("build/new/27/byte");
 				break;
 			case 28:
 				cout << "/* #28 Using attribute namespaces without repetition */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/28/using_attr.cpp." << endl;
 				if (isWindows)
-					runWin32Process("using_attr");
+					runWin32Process("build/new/28/using_attr");
 				else
-					runNix("using_attr");
+					runNix("build/new/28/using_attr");
 				break;
 			case 29:
 				cout << "/* #29 Stricter Order of Evaluation Rules */" << endl;
 				cout << "Please see the text file located at ~/CPlusPlus17/src/new/29/eval_order.txt." << endl;
 				if (isWindows)
-					runWin32Process("eval_order.txt");
+					runWin32Process("build/new/29/eval_order.txt");
 				else
-					runNix("eval_order.txt");
+					runNix("build/new/29/eval_order.txt");
 				break;
 			case 30:
 				cout << "/* #30 Exception Specifications are part of type definitions */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/30/throw_type.cpp." << endl;
 				if (isWindows)
-					runWin32Process("throw_type");
+					runWin32Process("build/new/30/throw_type");
 				else
-					runNix("throw_type");
+					runNix("build/new/30/throw_type");
 				break;
 			case 31:
 				cout << "/* #31 Template-Template Parameters match compatible arguments */" << endl;
 				cout << "The source file is located at ~/CPlusPlus17/src/new/31/templ_match.cpp." << endl;
 				if (isWindows)
-					runWin32Process("templ_match");
+					runWin32Process("build/new/31/templ_match");
 				else
-					runNix("templ_match");
+					runNix("build/new/31/templ_match");
 				break;
 			case 32:
 				cout << "/* #31 Guaranteed Copy Elision */" << endl;
 				cout << "Please see the text file located at~/CPlusPlus17/src/new/32/templ_match.txt" << endl;
 				if (isWindows)
-					runWin32Process("templ_match.txt");
+					runWin32Process("build/new/32/templ_match.txt");
 				else
-					runNix("templ_match.txt");
+					runNix("build/new/32/templ_match.txt");
 				break;
 			case 33:
 				cout << "/* #33 Changes to Specification on Inheriting Constructors */" << endl;
 				cout << "Please see the text file located at~/CPlusPlus17/src/new/33/using_constr.cpp" << endl;
 				if (isWindows)
-					runWin32Process("using_constr");
+					runWin32Process("build/new/33/using_constr");
 				else
-					runNix("using_constr");
+					runNix("build/new/33/using_constr");
 				break;
 		}
-		return;
 	}
 }
 
