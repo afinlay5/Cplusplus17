@@ -27,7 +27,7 @@ SOFTWARE.
 ==============================================================================
 **/
 
-/* #3 Removal of deprecated Dynamic Exception Specifications */
+/* #4 Removal of deprecated Dynamic Exception Specifications */
 
 //EXC Exception Class
 class EXC { };

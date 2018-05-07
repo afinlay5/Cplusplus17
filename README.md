@@ -10,8 +10,7 @@ Built and tested on Linux Mint, SUSE Linux.
 
 # Requirements
 - cmake version 3.11.1
-- clang++ (LLVM/Clang) v.6.0.0
-- g++-7 (GCC) v.7.3.1
+- clang++ (LLVM/Clang) v.6.0.0 or g++-7 (GCC) v.7.3.1
 
 # Known Problems
 - None (05/03/2018).
