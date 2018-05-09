@@ -55,7 +55,7 @@ int main() {
 	if ( std::strcmp((typeid(_str).name()), "PKc") == 0 ) { _str_type = "std::string"; }
 	else { _str_type = "unknown/non-gcc/clang compiler"; }
 
-	if ( std::strcmp((typeid(_listinit).namrm auto_dee()), "St16initializer_listIPKcE") == 0 ) 
+	if ( std::strcmp((typeid(_listinit).name()), "St16initializer_listIPKcE") == 0 ) 
 		 { _listinit_type = "std::initializer_list<char const*>"; }
 	else { _listinit_type = "unknown/non-gcc/clang compiler"; }
 

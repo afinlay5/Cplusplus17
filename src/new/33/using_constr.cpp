@@ -27,13 +27,15 @@ SOFTWARE.
 ==============================================================================
 **/
 
+#include<iostream>
+
 /* #33 Changes to Specification on Inheriting Constructors */
 
 struct BASE1 {
-	BASE1(double x) {}
+	BASE1(double x) { };
 };
 struct BASE2 {
-	BASE2(double x) { }
+	BASE2(double x) { };
 };
 
 struct DERIVED : BASE1, BASE2 {
@@ -45,7 +47,7 @@ struct DERIVED : BASE1, BASE2 {
 		and BASE2(double). IN C++17 this call is not
 		ambiguous. using CLASS:CONSTRUCTOR is different
 		because instead of declaring a new set of constructors
-		the base class constructore are now visible, to make
+		the base class constructors are now visible, to make
 		overloading possible.
 	*/
 	DERIVED (double);

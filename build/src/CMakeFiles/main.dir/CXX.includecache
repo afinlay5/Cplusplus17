@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adrian/Projects/CPlusPlus17/src/main.cpp
+string
+-
+locale
+-
+cstdlib
+-
+iostream
+-
+algorithm
+-
+windows.h
+-
+

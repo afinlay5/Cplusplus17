@@ -1,0 +1,1 @@
+/usr/clang/clang+llvm-6.0.0-x86_64-linux-sles12.2/bin/clang++    -rdynamic CMakeFiles/attributes.dir/attributes.cpp.o  -o attributes 

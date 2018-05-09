@@ -29,7 +29,7 @@ SOFTWARE.
 
 /* #24 Unknown Attributes Required to be Ignored */
 
-[[unknown_attributex]]
+[[unknown_attributes]]
 int main () {
 	return 0;
 }
