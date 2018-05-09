@@ -1,7 +1,7 @@
 # New Language Features & Language Changes in C++17
 CMake source code repository for C++17 source code examples posted on personal blog (http://bit.ly/Cplusplus17Ft).
 Built and tested on Linux Mint, SUSE Linux. The executables included have been compiled against Clang v6 on SUSE linux.
-Many thanks to Parra Deadlock for getting around cMake.
+Many thanks to Parra Deadlock for getting around CMake. CMake is MIT licensed.
 
 ![alt text](https://raw.githubusercontent.com/afinlay5/Cplusplus17/master/blog.png)
 

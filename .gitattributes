@@ -1,14 +1,7 @@
-#Tell Linguist to exlcude almost all CMake files.
-build/CMakeFiles/* linguist-vendored
-build/CMakeCache.txt linguist-vendored
+#Tell Linguist to ignore all makefiles, cmakefiles, C files.
 build/Makefile linguist-vendored
-build/cmake_install.cmake linguist-vendored
-build/src/MakeFile linguist-vendored
-build/src/cmake_install.cmake linguist-vendored
+build/CMakeFiles/* linguist-vendored
 build/src/CMakeFiles/* linguist-vendored
-build/src/new/CMakeFiles/* linguist-vendored
-ƀuild/src/new/Makefile linguist-vendored
-ƀuild/src/new/cmake_install.cmake linguist-vendored
 
 build/src/new/1/CMakeFiles/* linguist-vendored
 build/src/new/2/CMakeFiles/* linguist-vendored
@@ -39,3 +32,33 @@ build/src/new/26/CMakeFiles/* linguist-vendored
 build/src/new/27/CMakeFiles/* linguist-vendored
 build/src/new/28/CMakeFiles/* linguist-vendored
 build/src/new/30/CMakeFiles/* linguist-vendored
+
+build/src/new/1/Makefile linguist-vendored
+build/src/new/2/Makefile linguist-vendored
+build/src/new/3/Makefile linguist-vendored
+build/src/new/4/Makefile linguist-vendored
+build/src/new/5/Makefile linguist-vendored
+build/src/new/6/Makefile linguist-vendored
+build/src/new/7/Makefile linguist-vendored
+build/src/new/8/Makefile linguist-vendored
+build/src/new/9/Makefile linguist-vendored
+build/src/new/10/Makefile linguist-vendored
+build/src/new/11/Makefile linguist-vendored
+build/src/new/12/Makefile linguist-vendored
+build/src/new/13/Makefile linguist-vendored
+build/src/new/14/Makefile linguist-vendored
+build/src/new/15/Makefile linguist-vendored
+build/src/new/16/Makefile linguist-vendored
+build/src/new/17/Makefile linguist-vendored
+build/src/new/18/Makefile linguist-vendored
+build/src/new/19/Makefile linguist-vendored
+build/src/new/20/Makefile linguist-vendored
+build/src/new/21/Makefile linguist-vendored
+build/src/new/22/Makefile linguist-vendored
+build/src/new/23/Makefile linguist-vendored
+build/src/new/24/Makefile linguist-vendored
+build/src/new/25/Makefile linguist-vendored
+build/src/new/26/Makefile linguist-vendored
+build/src/new/27/Makefile linguist-vendored
+build/src/new/28/Makefile linguist-vendored
+build/src/new/30/Makefile linguist-vendored
